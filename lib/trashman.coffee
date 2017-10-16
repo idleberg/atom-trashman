@@ -33,13 +33,13 @@ module.exports = Trashman =
           order: 1
         autoOpenConsole:
           title: "Automatically Open Console"
-          description: "Logs all actions to the console"
+          description: "Logs all actions to the console while in Debug Mode"
           type: "boolean"
           default: true
           order: 2
         autoClearConsole:
           title: "Automatically Clear Console"
-          description: "Clears the console on each call"
+          description: "Clears the console on each call while in Debug Mode"
           type: "boolean"
           default: true
           order: 3

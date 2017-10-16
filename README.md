@@ -45,7 +45,7 @@ Also take note that several tweaks can be made through the package settings!
 
 ## Todo List
 
-* Promise-based functions
+* Use promises
 * Add timer
 * Add select-list
 

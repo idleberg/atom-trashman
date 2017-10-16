@@ -1,7 +1,7 @@
 {
   "name": "trashman",
   "main": "./lib/trashman",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Clean up outdated package data on disk and Atom storage",
   "keywords": [
     "apm",

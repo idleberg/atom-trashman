@@ -39,9 +39,15 @@ $ git clone https://github.com/idleberg/atom-trashman trashman
 
 The following commands are available through the [command-palette](https://atom.io/docs/latest/getting-started-atom-basics#command-palette):
 
-* Trashman: Delete Outdated Package Data
+* `Trashman: Delete Outdated Package Data`
 
 Also take note that several tweaks can be made through the package settings!
+
+## Todo List
+
+* Promise-based functions
+* Add timer
+* Add select-list
 
 ## License
 

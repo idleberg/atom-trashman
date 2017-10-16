@@ -1,0 +1,39 @@
+{
+  "name": "trashman",
+  "main": "./lib/trashman",
+  "version": "0.0.0",
+  "description": "Clean up outdated package data on disk and Atom storage",
+  "keywords": [
+    "apm",
+    "local storage",
+    "clean"
+  ],
+  "activationCommands": {
+    "atom-workspace": [
+      "trashman:delete-outdated-package-data"
+    ]
+  },
+  "repository": "https://github.com/idleberg/atom-trashman",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "atom-select-list": "^0.3.2",
+    "fs-extra": "^4.0.2",
+    "semver": "^5.4.1",
+    "semver-compare": "^1.0.0"
+  },
+  "devDependencies": {
+    "coffeelint-stylish": "^0.1.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-coffeelint": "^0.6.0",
+    "gulp-debug": "^3.1.0",
+    "gulp-jsonlint": "^1.2.0",
+    "gulp-lesshint": "^4.0.0",
+    "jshint": "^2.9.5"
+  },
+  "scripts": {
+    "test": "gulp lint"
+  }
+}

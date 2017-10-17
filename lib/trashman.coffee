@@ -80,7 +80,7 @@ module.exports = Trashman =
 
   # TODO: promise based
   deleteVersions: (item) ->
-    { readdirSync } = require "fs"
+    { lstatSync, readdirSync } = require "fs"
     { removeSync } =  require('fs-extra')
     { join } = require "path"
     { valid } = require "semver"
@@ -106,11 +106,11 @@ module.exports = Trashman =
       if valid(version) and not (version.startsWith(".") or version.startsWith("_"))
         fullPath = join inputPath, version
 
-        break unless fs.lstatSync(fullPath).isDirectory()
+        break unless lstatSync(fullPath).isDirectory()
 
         try
           removeSync(fullPath) if @getConfig("deleteApmFolders")
-          console.info "Deleted '.apm/#{item}/#{version}'" if @getConfig("developerSettings.debugMode")
+          console.log "Deleted '.apm/#{item}/#{version}'" if @getConfig("developerSettings.debugMode")
         catch err
           console.error "Deleting '#{item}/#{version}' failed (#{fullPath})" if @getConfig("developerSettings.debugMode")
           console.error err

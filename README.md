@@ -1,11 +1,10 @@
 # trashman
 
-[![apm](https://img.shields.io/apm/l/trashman.svg?style=flat-square)](https://atom.io/packages/trashman)
-[![apm](https://img.shields.io/apm/v/trashman.svg?style=flat-square)](https://atom.io/packages/trashman)
-[![apm](https://img.shields.io/apm/dm/trashman.svg?style=flat-square)](https://atom.io/packages/trashman)
-[![Travis](https://img.shields.io/travis/idleberg/atom-trashman.svg?style=flat-square)](https://travis-ci.org/idleberg/atom-trashman)
-[![David](https://img.shields.io/david/idleberg/atom-trashman.svg?style=flat-square)](https://david-dm.org/idleberg/atom-trashman)
-[![David](https://img.shields.io/david/dev/idleberg/atom-trashman.svg?style=flat-square)](https://david-dm.org/idleberg/atom-trashman?type=dev)
+[![apm](https://flat.badgen.net/apm/license/trashman)](https://atom.io/packages/trashman)
+[![apm](https://flat.badgen.net/apm/v/trashman)](https://atom.io/packages/trashman)
+[![apm](https://flat.badgen.net/apm/dl/trashman)](https://atom.io/packages/trashman)
+[![CircleCI](https://flat.badgen.net/circleci/github/idleberg/atom-trashman)](https://circleci.com/gh/idleberg/atom-trashman)
+[![David](https://flat.badgen.net/david/dep/idleberg/atom-trashman)](https://david-dm.org/idleberg/atom-trashman)
 
 Clean up outdated package data in `~/.atom/.apm` and Atom's [storage](https://developer.mozilla.org/docs/Web/API/Storage). Take note of the package settings before first time usage!
 

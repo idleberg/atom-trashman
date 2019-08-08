@@ -81,7 +81,7 @@ module.exports = Trashman =
         unless directory.startsWith(".") or directory.startsWith("_") or directory.startsWith("@")
           @deleteVersions(directory)
       else
-        console.log "Skipping #{directory}, not a directory" if @getConfig("developerSettings.debugMode")
+        console.log "#{directory}: skipping, not a directory" if @getConfig("developerSettings.debugMode")
 
   # TODO: promise based
   deleteVersions: (item) ->

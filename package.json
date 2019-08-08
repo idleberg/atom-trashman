@@ -1,7 +1,7 @@
 {
   "name": "trashman",
   "main": "./lib/trashman",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Clean up outdated package data on disk and Atom storage",
   "scripts": {
     "build": "webpack --mode production",

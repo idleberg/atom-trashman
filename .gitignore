@@ -1,5 +1,14 @@
-.DS_Store
-npm-debug.log
-node_modules*
-package-lock.json
+# Package Managers
+bower_components/
+node_modules/
+npm-debug.log*
+shrinkwrap.yaml
+vendor/
+yarn-error.log
+
+# Development Files
+*.d.ts
+*.map
+
+# Project-specific
 todo.md

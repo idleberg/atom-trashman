@@ -59,7 +59,7 @@ module.exports = Trashman =
 
   # TODO: promise based
   deleteOutdatedData: ->
-    { readdirSync } = require "fs"
+    { existsSync, lstatSync, readdirSync } = require "fs"
 
     atom.openDevTools() if @getConfig("developerSettings.debugMode") and @getConfig("developerSettings.autoOpenConsole")
     console.clear() if @getConfig("developerSettings.debugMode") and @getConfig("developerSettings.autoClearConsole")
@@ -75,8 +75,11 @@ module.exports = Trashman =
     directories.sort()
 
     for directory in directories
-      unless directory.startsWith(".") or directory.startsWith("_") or directory.startsWith("@")
-        @deleteVersions(directory)
+      if existsSync(directory) && lstatSync(directory).isDirectory()
+        unless directory.startsWith(".") or directory.startsWith("_") or directory.startsWith("@")
+          @deleteVersions(directory)
+      else
+        console.log "Skipping #{directory}, not a directory" if @getConfig("developerSettings.debugMode")
 
   # TODO: promise based
   deleteVersions: (item) ->

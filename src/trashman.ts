@@ -4,7 +4,7 @@ import { deleteOutdatedData, deleteOutdateStorageData } from './commands';
 import Logger from './log';
 import Signal from './busy-signal';
 
-const PackageControl = {
+const Trashman = {
   config: configSchema,
   subscriptions: new CompositeDisposable(),
 
@@ -43,4 +43,4 @@ const PackageControl = {
   }
 };
 
-export default PackageControl;
+export default Trashman;

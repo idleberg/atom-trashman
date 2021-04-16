@@ -3,33 +3,18 @@ import meta from '../package.json';
 import Logger from './log';
 
 const configSchema = {
-  deleteApmFolders: {
-    title: 'Delete apm Folders',
-    description: 'Deletes outdated packages in `~/.atom/.apm`',
-    type: 'boolean',
-    default: true,
-    order: 1
-  },
-  deleteStorage: {
-    title: 'Delete Storage',
-    description:
-      "Deletes items for outdated packages in Atom's [storage](https://developer.mozilla.org/en-US/docs/Web/API/Storage)",
-    type: 'boolean',
-    default: true,
-    order: 2
-  },
   itemsToKeep: {
     title: 'Items to Keep',
     description: 'Specify the last number of versions to keep',
     type: 'integer',
     default: 5,
     minimum: 1,
-    order: 3
+    order: 1
   },
   developer: {
     title: 'Developer Settings',
     type: 'object',
-    order: 4,
+    order: 2,
     properties: {
       autoOpenConsole: {
         title: 'Automatically Open Console',

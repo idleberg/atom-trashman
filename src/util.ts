@@ -1,5 +1,6 @@
 import { constants, promises as fs } from 'fs';
 import { dirname, join } from 'path';
+import { getConfig } from './config';
 import latestSemver from 'latest-semver';
 
 async function fileExists(filePath: string): Promise<boolean> {
@@ -37,7 +38,9 @@ function splitVersions(versions: string[]): any[] {
 
   versions.splice(index, 1);
 
-  return [latestVersion, versions];
+  const deleteVersions = versions.sort().slice(0, -1 * Number(getConfig('itemsToKeep')));
+
+  return [latestVersion, deleteVersions];
 }
 
 export { fileExists, getDotApmFolder, isDirectory, splitVersions };

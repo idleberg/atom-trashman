@@ -18,7 +18,7 @@ async function deleteOutdatedData(): Promise<void> {
     console.clear();
   }
 
-  Signal.add('Deleting .apm data');
+  Signal.add('Deleting package data');
 
   const dotApmFolder = await getDotApmFolder();
 
@@ -66,7 +66,7 @@ async function deleteOutdatedData(): Promise<void> {
       });
     });
 
-  Signal.remove('Deleting .apm data');
+  Signal.remove('Deleting package data');
 }
 
 async function deleteOutdateStorageData(): Promise<void> {

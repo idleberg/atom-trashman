@@ -1,14 +1,13 @@
 # Package Managers
 bower_components/
 node_modules/
-npm-debug.log*
-shrinkwrap.yaml
-vendor/
+*npm-debug.log*
 yarn-error.log
 
-# Development Files
-*.d.ts
+# Development
+.eslintcache
+.rollup.cache/
+.stylelintcache
+.yo-rc.json
 *.map
-
-# Project-specific
-todo.md
+tsconfig.tsbuildinfo

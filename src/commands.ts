@@ -18,7 +18,7 @@ async function deleteOutdatedData(): Promise<void> {
     console.clear();
   }
 
-  Signal.add('Deleting package data');
+  Signal.add('Trashman: Deleting package data');
 
   const dotApmFolder = await getDotApmFolder();
 
@@ -66,13 +66,13 @@ async function deleteOutdatedData(): Promise<void> {
       });
     });
 
-  Signal.remove('Deleting package data');
+  Signal.remove('Trashman: Deleting package data');
 }
 
 async function deleteOutdateStorageData(): Promise<void> {
   const installedPackages = atom.packages.getAvailablePackageNames();
 
-  Signal.add('Deleting storage items');
+  Signal.add('Trashman: Deleting storage items');
 
   installedPackages.map((packageName) => {
     const storageData = Object.keys(localStorage).filter((item) =>
@@ -101,7 +101,7 @@ async function deleteOutdateStorageData(): Promise<void> {
     }
   });
 
-  Signal.remove('Trashman is deleting storage items');
+  Signal.remove('Trashman: Deleting storage items');
 }
 
 export { deleteOutdatedData, deleteOutdateStorageData };

@@ -1,3 +1,4 @@
+import { ConfigValues } from 'atom';
 import meta from '../package.json';
 import Logger from './log';
 

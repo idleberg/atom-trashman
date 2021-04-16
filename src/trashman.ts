@@ -1,5 +1,5 @@
 import { CompositeDisposable } from 'atom';
-import { configSchema } from './config';
+import { configSchema, migrateConfig } from './config';
 import { deleteOutdatedData, deleteOutdateStorageData } from './commands';
 import Logger from './log';
 import Signal from './busy-signal';
@@ -24,6 +24,10 @@ const PackageControl = {
         }
       })
     );
+  },
+
+  migrate(): void {
+    migrateConfig('developerSettings', 'developer');
   },
 
   deactivate(): void {

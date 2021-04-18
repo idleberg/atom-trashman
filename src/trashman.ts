@@ -1,6 +1,7 @@
 import { CompositeDisposable } from 'atom';
-import { configSchema, migrateConfig } from './config';
+import { configSchema, getConfig, migrateConfig } from './config';
 import { deleteOutdatedData, deleteOutdateStorageData } from './commands';
+import { setLastUpdate, updateIsDue } from './util';
 import Logger from './log';
 import Signal from './busy-signal';
 
@@ -24,6 +25,21 @@ const Trashman = {
         }
       })
     );
+
+    if (updateIsDue()) {
+      Logger.log(`Defering cleanup by 10 seconds`);
+
+      setTimeout(async () => {
+        Logger.log('Running periodic cleanup 🧹');
+
+        const periodicCleanupTypes = getConfig('periodicCleanupTypes');
+
+        if (periodicCleanupTypes.includes('deleteFiles')) await deleteOutdatedData();
+        if (periodicCleanupTypes.includes('deleteStorage')) await deleteOutdateStorageData();
+
+        setLastUpdate();
+      }, 10 * 1000);
+    }
   },
 
   migrate(): void {

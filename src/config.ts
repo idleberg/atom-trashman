@@ -2,6 +2,19 @@ import { ConfigValues } from 'atom';
 import meta from '../package.json';
 import Logger from './log';
 
+const PERIODS = {
+  never: -1,
+  daily: 60 * 60 * 24,
+  weekly: 60 * 60 * 24 * 7,
+  biweekly: 60 * 60 * 24 * 7 * 2,
+  monthly: 60 * 60 * 24 * 30,
+  bimonthly: 60 * 60 * 24 * 30 * 2,
+  quarterly: 60 * 60 * 24 * 90,
+  yearly: 60 * 60 * 24 * 365
+};
+
+const OPERATIONS = ['files', 'storage'];
+
 const configSchema = {
   itemsToKeep: {
     title: 'Items to Keep',
@@ -11,10 +24,72 @@ const configSchema = {
     minimum: 1,
     order: 1
   },
+  periodicCleanupInterval: {
+    title: 'Run Periodically',
+    description: 'Specify an interval to run `trashman` automatically',
+    type: 'integer',
+    default: PERIODS.never,
+    enum: [
+      {
+        value: PERIODS.never,
+        description: 'never'
+      },
+      {
+        value: PERIODS.daily,
+        description: 'daily'
+      },
+      {
+        value: PERIODS.weekly,
+        description: 'weekly'
+      },
+      {
+        value: PERIODS.biweekly,
+        description: 'bi-weekly'
+      },
+      {
+        value: PERIODS.monthly,
+        description: 'monthly'
+      },
+      {
+        value: PERIODS.bimonthly,
+        description: 'bi-monthly'
+      },
+      {
+        value: PERIODS.quarterly,
+        description: 'quarterly'
+      },
+      {
+        value: PERIODS.yearly,
+        description: 'yearly'
+      }
+    ],
+    order: 2
+  },
+  periodicCleanupTypes: {
+    title: 'Periodic Cleanup Types',
+    description: 'Specify the types of delete operations to run periodically',
+    type: 'array',
+    default: OPERATIONS,
+    enum: [
+      {
+        value: OPERATIONS,
+        description: 'Files and Storage'
+      },
+      {
+        value: [OPERATIONS[0]],
+        description: 'Files only'
+      },
+      {
+        value: [OPERATIONS[1]],
+        description: 'Storage only'
+      }
+    ],
+    order: 3
+  },
   developer: {
     title: 'Developer Settings',
     type: 'object',
-    order: 2,
+    order: 4,
     properties: {
       autoOpenConsole: {
         title: 'Automatically Open Console',
@@ -27,7 +102,7 @@ const configSchema = {
         title: 'Automatically Clear Console',
         description: 'Clears the console on each call while in Debug Mode',
         type: 'boolean',
-        default: true,
+        default: false,
         order: 2
       }
     }

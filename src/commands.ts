@@ -3,7 +3,6 @@ import { getDotApmFolder, isDirectory, splitVersions } from './util';
 import { join } from 'path';
 import { promises as fs } from 'fs';
 import globby from 'globby';
-import latestSemver from 'latest-semver';
 import Logger from './log';
 import Signal from './busy-signal';
 
@@ -18,6 +17,7 @@ async function deleteOutdatedData(): Promise<void> {
     console.clear();
   }
 
+  Logger.log('Deleting package data');
   Signal.add('Trashman: Deleting package data');
 
   const dotApmFolder = await getDotApmFolder();
@@ -72,6 +72,7 @@ async function deleteOutdatedData(): Promise<void> {
 async function deleteOutdateStorageData(): Promise<void> {
   const installedPackages = atom.packages.getAvailablePackageNames();
 
+  Logger.log('Deleting storage items');
   Signal.add('Trashman: Deleting storage items');
 
   installedPackages.map((packageName) => {

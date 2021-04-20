@@ -17,8 +17,8 @@ async function deleteOutdatedData(): Promise<void> {
     console.clear();
   }
 
-  Logger.log('Deleting package data');
-  Signal.add('Trashman: Deleting package data');
+  Logger.log('Deleting apm cache');
+  Signal.add('Trashman: Deleting apm cache');
 
   const dotApmFolder = await getDotApmFolder();
 
@@ -66,7 +66,7 @@ async function deleteOutdatedData(): Promise<void> {
       });
     });
 
-  Signal.remove('Trashman: Deleting package data');
+  Signal.remove('Trashman: Deleting apm cache');
 }
 
 async function deleteOutdateStorageData(): Promise<void> {

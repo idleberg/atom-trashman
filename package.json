@@ -28,7 +28,7 @@
   },
   "activationCommands": {
     "atom-workspace": [
-      "trashman:delete-outdated-package-data",
+      "trashman:delete-apm-cache",
       "trashman:delete-outdated-storage-data"
     ]
   },

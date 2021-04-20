@@ -73,11 +73,11 @@ const configSchema = {
     enum: [
       {
         value: OPERATIONS,
-        description: 'Files and Storage'
+        description: 'apm Cache and Storage'
       },
       {
         value: [OPERATIONS[0]],
-        description: 'Files only'
+        description: 'apm Cache only'
       },
       {
         value: [OPERATIONS[1]],

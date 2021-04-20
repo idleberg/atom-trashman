@@ -15,7 +15,7 @@ const Trashman = {
     // Register commands
     this.subscriptions.add(
       atom.commands.add('atom-workspace', {
-        'trashman:delete-outdated-package-data': async () => {
+        'trashman:delete-apm-cache': async () => {
           await deleteOutdatedData();
         }
       }),

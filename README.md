@@ -34,6 +34,18 @@ Clone the repository as `trashman`:
 $ git clone https://github.com/idleberg/atom-trashman trashman
 ```
 
+Inside the cloned directory, install Node dependencies:
+
+```bash
+$ npm install
+```
+
+Build source:
+
+```bash
+$ npm run build
+```
+
 ## Usage
 
 The following commands are available through the [command-palette](https://atom.io/docs/latest/getting-started-atom-basics#command-palette):
